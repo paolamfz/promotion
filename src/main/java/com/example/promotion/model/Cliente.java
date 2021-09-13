@@ -13,10 +13,8 @@ public class Cliente extends ModelBase<ClienteDto> {
     private String username;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM-dd")
-    @Column(nullable = true)
-    private Date dataOfBirth;
 
-    @Column(nullable = true)
+    @Column(nullable = false)
     private String birthdate;
 
     public String getEmail() {
@@ -33,14 +31,6 @@ public class Cliente extends ModelBase<ClienteDto> {
 
     public void setUsername(String username) {
         this.username = username;
-    }
-
-    public Date getDataOfBirth() {
-        return dataOfBirth;
-    }
-
-    public void setDataOfBirth(Date dataOfBirth) {
-        this.dataOfBirth = dataOfBirth;
     }
 
     public String getBirthdate() {

@@ -11,9 +11,19 @@ import java.util.List;
 public class ClienteService {
     private final ClienteRepository clienteRepository;
 
-    public ClienteService(ClienteRepository clienteRepository){this.clienteRepository = clienteRepository;}
-    public Cliente save(Cliente cliente) {return clienteRepository.save(cliente);}
-    public List<Cliente> all() {return clienteRepository.findAll();}
+    public ClienteService(ClienteRepository clienteRepository){
+        this.clienteRepository = clienteRepository;
+    }
 
-    public List<Cliente> clientsBirthdate(String date) {return clienteRepository.searchClientsWithBirthday(date);}
+    public Cliente save(Cliente cliente) {
+        return clienteRepository.save(cliente);
+    }
+
+    public List<Cliente> all() {
+        return clienteRepository.findAll();
+    }
+
+    public List<Cliente> clientsBirthdate(String date) {
+        return clienteRepository.clientsWithBirthDay(date);
+    }
 }

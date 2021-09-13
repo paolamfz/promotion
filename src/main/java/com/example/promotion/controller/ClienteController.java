@@ -16,7 +16,7 @@ public class ClienteController {
         this.clienteService = clienteService;
     }
 
-    @PostMapping
+    @PostMapping("/")
     public Cliente newCliente(@RequestBody Cliente cliente){
         return clienteService.save(cliente);
     }
